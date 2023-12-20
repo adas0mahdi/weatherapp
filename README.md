@@ -21,12 +21,14 @@ This is a simple weather app built with React that allows users to check the cur
 
 
 # Install dependencies:
+  ```bash
 cd weather-app
 npm install
+```
 
-
-# Obtain an API key from OpenWeatherMap and replace YOUR_API_KEY in the code with your actual API key.
+## Obtain an API key from OpenWeatherMap and replace YOUR_API_KEY in the code with your actual API key.
 
 # Start the app:
-
+  ```bash
 npm start
+```
