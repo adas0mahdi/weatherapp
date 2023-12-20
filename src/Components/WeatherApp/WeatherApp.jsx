@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './WeatherApp.css'
 import SearchIcon from "../Assets/search.png";
 import ClearIcon from "../Assets/clear.png";
@@ -11,6 +11,9 @@ import HumidityhIcon from "../Assets/humidity.png";
 
 export const WeatherApp = () => {
     let ApiKey = "efdfbf19e2f5c6f3583f9db7067d9c29";
+    const [wicon, setWicon]= useState(CloudIcon)
+
+
     const search = async () =>{
             const element = document.getElementsByClassName("cityInput")
             if(element[0].value===""){
@@ -24,10 +27,35 @@ export const WeatherApp = () => {
             const temprature = document.getElementsByClassName("weather-temp");
             const location = document.getElementsByClassName("weather-location");
 
-            humidity[0].innerHTML = data.main.humidity;
-            wind[0].innerHTML = data.wind.speed;
-            temprature[0].innerHTML = data.main.temp;
+            humidity[0].innerHTML = data.main.humidity+" %";
+            wind[0].innerHTML = Math.floor(data.wind.speed)+" Km/h";
+            temprature[0].innerHTML = Math.floor(data.main.temp)+ " °C";
             location[0].innerHTML = data.name;
+            
+            if (data.weather[0].icon==="01d" || data.weather[0].icon==="01n"){
+                setWicon(ClearIcon)
+            }
+            else if (data.weather[0].icon==="02d" || data.weather[0].icon==="02n"){
+                setWicon(CloudIcon)
+            }
+            else if (data.weather[0].icon==="03d" || data.weather[0].icon==="03n"){
+                setWicon(DrizzleIcon)
+            }
+            else if (data.weather[0].icon==="04d" || data.weather[0].icon==="04n"){
+                setWicon(DrizzleIcon)
+            }
+            else if (data.weather[0].icon==="09d" || data.weather[0].icon==="09n"){
+                setWicon(RainIcon)
+            }
+            else if (data.weather[0].icon==="10d" || data.weather[0].icon==="10n"){
+                setWicon(RainIcon)
+            }
+            else if (data.weather[0].icon==="13d" || data.weather[0].icon==="13n"){
+                setWicon(SnowIcon)
+            }
+            else {
+                setWicon(ClearIcon)
+            }
     }
   return (
     <div className='container'>
@@ -38,9 +66,9 @@ export const WeatherApp = () => {
             </div>
         </div>
         <div className='wather-image'>
-            <img src={CloudIcon} alt="" />
+            <img src={wicon} alt="" />
         </div>
-        <div className='weather-temp'>24°C </div>
+        <div className='weather-temp'>24°C</div>
         <div className='weather-location'>London</div>
         <div className='data-container'>
             <div className='element'>

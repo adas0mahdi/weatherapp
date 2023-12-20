@@ -1,10 +1,16 @@
+html{
+    background-color: rgb(229, 192, 181);
+}
 .container{
-    width: 607px;
-    height: 829px;
+    width: 400px;
+    height: 600px;
     margin: auto;
     margin-top: 75px;
-    border-radius:12px;
-    background-image: linear-gradient(180deg, #130754 0%, #3b2f80 100%);
+    border-radius:50px;
+    background-image:linear-gradient(180deg, #17a4db 0%, #0c3660 100%);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
 }
 .top-bar{
     display: flex;
@@ -14,8 +20,8 @@
 }
 .top-bar input{
     display: flex;
-    width: 362px;
-    height: 78px;
+    width: 250px;
+    height: 60px;
     background: #ebfffc;
     border: none;
     outline: none;
@@ -30,15 +36,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 78px;
-    height: 79px;
+    width: 60px;
+    height: 60px;
     background-color: #ebfffc;
     border-radius: 40px;
     cursor: pointer;
 }
 
 .wather-image{
-    margin-top: 29px;
+
+    margin-top: 1px;
     display: flex;
     justify-content: center;
 }
@@ -46,14 +53,14 @@
     display: flex;
     justify-content: center;
     color: white;
-    font-size: 120px;
+    font-size: 50px;
     font-weight: 400;
 }
 .weather-location{
     display: flex;
     justify-content: center;
     color: white;
-    font-size: 60px;
+    font-size: 30px;
     font-weight: 400;
 }
 .data-container{
@@ -66,14 +73,14 @@
     margin: auto;
     display: flex;
     align-items: flex-start;
-    gap:12px;
+    gap:10px;
 }
 .data{
-    font-size: 34px;
+    font-size: 20px;
     font-weight: 400;
 }
 .text{
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 400;
 }
 .icon{
